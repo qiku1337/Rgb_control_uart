@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Color-Rgb-512.ico</ApplicationIcon>
+    <Win32Resource />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\Settings1.Designer.cs" />
+    <Compile Remove="Properties\Settings2.Designer.cs" />
+    <Compile Remove="Settings.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\Settings1.settings" />
+    <None Remove="Properties\Settings2.settings" />
+    <None Remove="Settings.settings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ColorPicker">
+      <HintPath>..\..\..\..\Desktop\ColorPicker.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
